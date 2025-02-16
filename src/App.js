@@ -1,4 +1,6 @@
-import React from "react";    
+import React from "react";   
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 import Banner from "./components/Banner";
 import Header from "./components/Header";
@@ -11,18 +13,29 @@ import Nav from "./components/Nav";
 import Competences from "./components/Competences";
 
 
+//import ProjetEcommerce from "./pages/ProjetEcommerce";
+import Striga from "./pages/Striga.js";
+
+
+
+
 const App = () => {
     return (
-        <div>
+        <Router> 
             <Header />
             <Banner />
             <About />
             <Competences />
             <Work />
             <Contact />
-            <Nav/>
+            <Nav />
             
-        </div>
+            <Routes>
+                <Route path="/" element={<Work />} />
+                {/* <Route path="/projet1" element={<Striga />} /> */}
+                {/* <Route path="/projet2" element={<ProjetEcommerce />} /> */}
+            </Routes>
+        </Router>
     );
 };
 
