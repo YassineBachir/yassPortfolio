@@ -1,18 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
 import { fadeIn } from "../variants";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Work = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#work") {
+      setTimeout(() => {
+        const element = document.querySelector("#work");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 500); 
+    }
+  }, [location]);
+
+  
   return (
     <section id="work" className="py-16 bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white">
       <div className="container mx-auto text-center">
-        {/* Animation du titre */}
+     
         <motion.h2
            variants={fadeIn("up", 0.2)}
                     initial="hidden"
                     whileInView="show"
+                    animate="show"
                     viewport={{ once: false, amount: 0.3 }}
                     className="text-4xl font-bold mb-8 mt-5"
         >
@@ -20,26 +36,28 @@ const Work = () => {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Projet 1 */}
+        
           <motion.div
              variants={fadeIn("up", 0.2)}
                       initial="hidden"
                       whileInView="show"
+                      animate="show"
                       viewport={{ once: false, amount: 0.3 }}
                    
             className="card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
           >
-            <Link to="/projet1" className="block cursor-pointer hover:bg-gray-700 transition duration-300 p-4 rounded-lg">
+            <Link to="/projet1"  rel="noopener noreferrer" className="block cursor-pointer hover:bg-gray-700 transition duration-300 p-4 rounded-lg">
               <h3 className="text-xl font-semibold mb-2">Détection de présence de striga (Data science)</h3>
               <p>Ce projet consiste à détecter la présence de striga dans les champs.</p>
             </Link>
           </motion.div>
 
-          {/* Projet 2 */}
+        
           <motion.div
             variants={fadeIn("up", 0.2)}          
             initial="hidden"
             whileInView="show"
+            animate="show"
             viewport={{ once: false, amount: 0.3 }}
                                
                       
@@ -51,11 +69,15 @@ const Work = () => {
             </Link>
           </motion.div>
 
+          
+          
+
           {/* Projet 3 */}
           <motion.div
            variants={fadeIn("up", 0.2)}
                     initial="hidden"
                     whileInView="show"
+                    animate="show"
                     viewport={{ once: false, amount: 0.3 }}
                   
             className="card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
@@ -66,26 +88,29 @@ const Work = () => {
             </Link>
           </motion.div>
 
-          {/* Projet 4 */}
           <motion.div
             variants={fadeIn("up", 0.2)}
                      initial="hidden"
                      whileInView="show"
+                     animate="show"
                      viewport={{ once: false, amount: 0.3 }}
                      
             className="card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
           >
             <Link to="/projet4" className="block cursor-pointer hover:bg-gray-700 transition duration-300 p-4 rounded-lg">
-              <h3 className="text-xl font-semibold mb-2">Feu de circulation et contrôle de badge sur l’autoroute</h3>
-              <p>Ce projet consistait à détecter si les feux de circulation sont allumés ou non.</p>
+              <h3 className="text-xl font-semibold mb-2">Conception et Réalisation d’une plateforme
+              SaaS générique de prise de Rendez-vous</h3>
+              <p>Dans ce projet, nous avons créer un site pour permettre de prendre rendez-vous.</p>
             </Link>
           </motion.div>
+          
 
           {/* Projet 5 */}
           <motion.div
              variants={fadeIn("up", 0.2)}
                       initial="hidden"
                       whileInView="show"
+                      animate="show"
                       viewport={{ once: false, amount: 0.3 }}
                     
             className="card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"
@@ -101,6 +126,7 @@ const Work = () => {
              variants={fadeIn("up", 0.2)}
                       initial="hidden"
                       whileInView="show"
+                      animate="show"
                       viewport={{ once: false, amount: 0.3 }}
                      
             className="card bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300"

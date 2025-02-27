@@ -2,8 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants"; // Assurez-vous que le fichier est bien importé
-
+import { fadeIn } from "../variants"; 
 const Banner = () => {
   return (
     <section
@@ -11,22 +10,24 @@ const Banner = () => {
       className="hero min-h-screen bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white"
     >
       <div className="hero-content flex-col lg:flex-row-reverse">
-        {/* Image avec animation */}
+       
         <motion.img
-          src="images/image1.png"
+          src="images/image1.png "
           alt="Profile"
-          className="max-w-sm rounded-lg ml-2 shadow-2xl"
-          variants={fadeIn("right", 0.5)} // Animation depuis la droite
+          className="max-w-sm rounded-lg ml-2 shadow-2xl "
+          variants={fadeIn("right", 0.5)} 
           initial="hidden"
           whileInView="show"
+          animate="show"
           viewport={{ once: false, amount: 0.3 }}
         />
 
-        {/* Texte avec animation */}
+       
         <motion.div
-          variants={fadeIn("left", 0.3)} // Animation depuis la gauche
+          variants={fadeIn("left", 0.3)} 
           initial="hidden"
           whileInView="show"
+          
           viewport={{ once: false, amount: 0.3 }}
         >
           <h1 className="text-5xl font-bold">
