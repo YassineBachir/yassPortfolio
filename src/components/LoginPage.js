@@ -16,8 +16,8 @@ export default function LoginPage() {
     };
 
     if (username === adminUser.username && password === adminUser.password) {
-      localStorage.setItem("isAuthenticated", "true");
-      navigate("/admin");
+      sessionStorage.setItem("authenticated", "true"); 
+      navigate("/admin"); 
     } else {
       setError("Identifiants incorrects !");
     }

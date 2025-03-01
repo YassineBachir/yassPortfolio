@@ -6,31 +6,41 @@ export default function AddProjectPage() {
   const [projectName, setProjectName] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
   const [projectImage, setProjectImage] = useState(null);
-
+  const [message, setMessage] = useState(''); 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      
       const formData = new FormData();
       formData.append('name', projectName);
       formData.append('description', projectDescription);
-    
       if (projectImage) {
         formData.append('image', projectImage);
       }
 
-      const response = await fetch('/api/projects', {
+      const response = await fetch('http://localhost:5000/api/projects', {
         method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
+        
+        setProjectName('');
+        setProjectDescription('');
+        setProjectImage(null);
+        setMessage('Nouveau projet ajouté avec succès!'); 
+        setTimeout(() => {
+          setMessage('');
+        }, 3000);
+
         navigate("/admin");
-      } else {
-        console.error('Erreur lors de l\'ajout du projet');
-      }
+
+      } 
     } catch (error) {
       console.error(error);
+      setMessage('Une erreur est survenue.'); 
+        setTimeout(() => {
+          setMessage('');
+        }, 3000);
     }
   };
 
@@ -41,7 +51,6 @@ export default function AddProjectPage() {
   return (
     <div className="h-screen flex flex-col items-center justify-center py-16 px-6 bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white overflow-hidden">
       <h1 className="text-3xl font-bold mb-6">Ajouter un Nouveau Projet</h1>
-
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg">
         <input
           type="text"
@@ -50,7 +59,6 @@ export default function AddProjectPage() {
           placeholder="Nom du Projet"
           className="bg-gray-800 p-2 rounded-lg text-white"
         />
-
         <textarea
           value={projectDescription}
           onChange={(e) => setProjectDescription(e.target.value)}
@@ -58,15 +66,12 @@ export default function AddProjectPage() {
           className="bg-gray-800 p-2 rounded-lg text-white h-40"
         />
 
-      
-
         <input
           type="file"
           onChange={handleImageChange}
           accept="image/*"
           className="bg-gray-800 p-2 rounded-lg text-white"
         />
-
         <button
           type="submit"
           className="bg-green-500 px-4 py-2 rounded-lg font-bold shadow-md hover:bg-green-400 transition"
@@ -74,6 +79,11 @@ export default function AddProjectPage() {
           Ajouter le Projet
         </button>
       </form>
+      {message && (
+        <div className="mt-4 p-3 bg-green-500 text-white rounded-lg">
+          {message}
+        </div>
+      )}
 
       <button
         onClick={() => navigate("/admin")}

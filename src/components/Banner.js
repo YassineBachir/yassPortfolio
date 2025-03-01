@@ -12,9 +12,9 @@ const Banner = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
        
         <motion.img
-          src="images/image1.png "
+          src="images/Design.png "
           alt="Profile"
-          className="max-w-sm rounded-lg ml-2 shadow-2xl "
+          className="max-w-sm rounded-lg ml-2 shadow-2xl rotate-[-90deg] "
           variants={fadeIn("right", 0.5)} 
           initial="hidden"
           whileInView="show"
@@ -43,15 +43,15 @@ const Banner = () => {
           </h1>
 
           <p className="py-6 text-1xl font-semibold uppercase leading-4">
-            Je suis un{" "}
+            Je suis une{" "}
             <span className="text-1xl font-bold bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text">
               <TypeAnimation
                 sequence={[
-                  "Développeur Web",
+                  "Développeuse Web",
                   2000,
                   "Data Scientist",
                   2000,
-                  "Ingénieur Réseaux",
+                  "Ingénieure Réseaux",
                   2000,
                 ]}
                 wrapper="span"

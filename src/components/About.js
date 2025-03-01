@@ -1,15 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
-import { FaLock, FaChartBar, FaBrain, FaBook, FaDumbbell, FaUtensils } from "react-icons/fa";
+import { FaLock, FaChartBar, FaBrain, FaBook, FaUtensils } from "react-icons/fa";
 
 const interests = [
   { icon: <FaLock className="text-red-400" />, label: "Cybersécurité" },
   { icon: <FaChartBar className="text-yellow-400" />, label: "Data" },
   { icon: <FaBrain className="text-blue-400" />, label: "Intelligence Artificielle" },
   { icon: <FaBook className="text-green-400" />, label: "Lecture" },
-  { icon: <FaDumbbell className="text-pink-400" />, label: "Fitness" },
-  { icon: <FaUtensils className="text-orange-400" />, label: "Cuisine" },
+  { icon: <FaUtensils className="text-orange-400" />, label: "FoodLover" },
 ];
 
 const About = () => {
@@ -45,10 +44,9 @@ const About = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-6 mt-6 mr-10">À propos de moi</h2>
           <p className="max-w-2xl">
-            Je suis passionnée par la technologie et déterminée à approfondir mes connaissances
-            sur les dernières tendances du secteur. Ma curiosité intellectuelle me pousse à rester 
-            informée des avancées technologiques et à explorer de nouveaux horizons à travers des 
-            projets académiques et des stages.
+          Bienvenue dans mon monde, où la curiosité est reine et la technologie, mon terrain de jeu !🤩 Passionnée par l’innovation, je ne me contente pas d’observer les tendances, je les explore, les teste et les réinvente😎. Toujours à l’affût de nouvelles découvertes, j’adore relever des défis, transformer des idées en solutions concrètes et plonger dans l’univers infini du digital. 
+
+Que ce soit à travers des projets ambitieux, des lignes de code bien ficelées ou des expériences enrichissantes, je cherche sans cesse à repousser les limites du possible. Mon objectif ? Apprendre, innover et laisser ma marque dans le monde de la tech ! 💡✨
           </p>
 
         

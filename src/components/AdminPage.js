@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -12,33 +12,18 @@ import Nav from "./Nav";
 
 export default function AdminPage() {
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const authStatus = localStorage.getItem("isAuthenticated");
-
-    if (authStatus !== "true") {
-      navigate("/login");
-      return;
+    const isAuthenticated = sessionStorage.getItem("authenticated"); 
+    if (!isAuthenticated) {
+      navigate("/login"); 
     }
-
-    setIsAuthenticated(true);
-    setIsLoading(false);
   }, [navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-    navigate("/login");
+    sessionStorage.removeItem("authenticated"); 
+    navigate("/login"); 
   };
-
-  if (isLoading) {
-    return <div className="text-white text-center mt-10">Vérification de l'authentification...</div>;
-  }
-
-  if (!isAuthenticated) {
-    return null; // Redirection en cours
-  }
 
   return (
     <section className="bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white min-h-screen">
