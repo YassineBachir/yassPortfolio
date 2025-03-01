@@ -1,26 +1,48 @@
 const express = require("express");
 const cors = require("cors");
+const multer = require("multer");
 
 const app = express();
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-const projects = [
-  { id: 1, nom: "Détection de présence de striga", description: "Détection de striga dans les champs." },
-  { id: 2, nom: "Création d’un site e-commerce", description: "E-commerce dédié aux femmes." },
-  { id: 3, nom: "Carnet d'adresse avec JavaSwing", description: "Application Java Swing." },
-  { id: 4, nom: "Plateforme SaaS de prise de rendez-vous", description: "Système de gestion de rendez-vous." },
-  { id: 5, nom: "Détection d'intrusion avec Snort", description: "Utilisation de Snort pour la cybersécurité." },
-  { id: 6, nom: "Analyse des données agricoles", description: "Analyse de l'agriculture au Sénégal." }
+const upload = multer({ dest: "uploads/" });
+
+const skills = [
+  { id: 1, nom: "JavaScript", description: "Développement web", icon: null },
+  { id: 2, nom: "Python", description: "Data science", icon: null },
 ];
 
-app.get("/api/projects", (req, res) => {
-  res.json(projects);
+
+app.get("/api/skills", (req, res) => {
+  res.json(skills);
+});
+
+
+app.post("/api/skills", upload.single("icon"), (req, res) => {
+  console.log("Requête reçue !");
+  console.log("Body:", req.body);
+  console.log("Fichier:", req.file);
+
+  const { name, description } = req.body;
+
+  if (!name || !description) {
+    return res.status(400).json({ error: "Nom et description sont obligatoires." });
+  }
+
+  const newSkill = {
+    id: skills.length + 1,
+    nom: name,
+    description,
+    iconPath: req.file ? req.file.path : null,
+  };
+
+  skills.push(newSkill);
+  res.status(201).json({ message: "Compétence ajoutée avec succès!", skill: newSkill });
 });
 
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
-
-
-//Verification: http://localhost:5000/api/projects

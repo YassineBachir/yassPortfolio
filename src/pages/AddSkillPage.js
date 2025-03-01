@@ -7,38 +7,44 @@ export default function AddSkillPage() {
   const [skillDescription, setSkillDescription] = useState('');
 
   const [skillIcon, setSkillIcon] = useState(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      
-      const formData = new FormData();
-      formData.append('name', skillName);
-      formData.append('description', skillDescription);
-      
-      if (skillIcon) {
-        formData.append('icon', skillIcon);
-      }
-
-      const response = await fetch('/api/skills', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        navigate("/admin");
-      } else {
-        console.error('Erreur lors de l\'ajout de la compétence');
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const handleIconChange = (e) => {
     setSkillIcon(e.target.files[0]);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('name', skillName);
+    formData.append('description', skillDescription);
+    if (skillIcon) {
+      formData.append('icon', skillIcon);
+    }
+  
+    console.log("🔍 Données envoyées :");
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ':', pair[1]);
+    }
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/skills', {
+        method: 'POST',
+        body: formData,
+      });
+  
+      const result = await response.text();  
+      console.log("🔍 Réponse du serveur :", result);
+  
+      if (response.ok) {
+        navigate("/admin");
+      } else {
+        console.error("Erreur lors de l'ajout de la compétence.");
+      }
+    } catch (error) {
+      console.error("Erreur dans la requête :", error);
+    }
+  };
+  
   return (
     <div className="h-screen flex flex-col items-center justify-center py-16 px-6 bg-gradient-to-r from-purple-900 via-black to-purple-900 text-white overflow-hidden">
       <h1 className="text-3xl font-bold mb-6">Ajouter une Nouvelle Compétence</h1>

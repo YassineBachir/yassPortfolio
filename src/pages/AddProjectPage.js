@@ -6,41 +6,35 @@ export default function AddProjectPage() {
   const [projectName, setProjectName] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
   const [projectImage, setProjectImage] = useState(null);
-  const [message, setMessage] = useState(''); 
+  const [message, setMessage] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const formData = new FormData();
-      formData.append('name', projectName);
-      formData.append('description', projectDescription);
-      if (projectImage) {
-        formData.append('image', projectImage);
-      }
 
-      const response = await fetch('http://localhost:5000/api/projects', {
-        method: 'POST',
+    const formData = new FormData();
+    formData.append('name', projectName);
+    formData.append('description', projectDescription);
+    if (projectImage) {
+      formData.append('image', projectImage);
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/projects", {
+        method: "POST",
         body: formData,
       });
 
       if (response.ok) {
-        
-        setProjectName('');
-        setProjectDescription('');
-        setProjectImage(null);
-        setMessage('Nouveau projet ajouté avec succès!'); 
+        setMessage("Projet ajouté avec succès!");
         setTimeout(() => {
-          setMessage('');
-        }, 3000);
-
-        navigate("/admin");
-
-      } 
+          setMessage("");
+          navigate("/work"); 
+        }, 2000);
+      } else {
+        setMessage("Erreur lors de l'ajout du projet.");
+      }
     } catch (error) {
-      console.error(error);
-      setMessage('Une erreur est survenue.'); 
-        setTimeout(() => {
-          setMessage('');
-        }, 3000);
+      setMessage("Une erreur est survenue.");
     }
   };
 
@@ -65,7 +59,6 @@ export default function AddProjectPage() {
           placeholder="Description du Projet"
           className="bg-gray-800 p-2 rounded-lg text-white h-40"
         />
-
         <input
           type="file"
           onChange={handleImageChange}
@@ -79,18 +72,12 @@ export default function AddProjectPage() {
           Ajouter le Projet
         </button>
       </form>
+
       {message && (
         <div className="mt-4 p-3 bg-green-500 text-white rounded-lg">
           {message}
         </div>
       )}
-
-      <button
-        onClick={() => navigate("/admin")}
-        className="bg-red-500 px-4 py-2 rounded-lg font-bold shadow-md hover:bg-red-400 transition mt-4"
-      >
-        Retour
-      </button>
     </div>
   );
 }
