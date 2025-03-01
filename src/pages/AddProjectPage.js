@@ -12,7 +12,7 @@ export default function AddProjectPage() {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('name', projectName);
+    formData.append('nom', projectName);
     formData.append('description', projectDescription);
     if (projectImage) {
       formData.append('image', projectImage);
@@ -26,9 +26,15 @@ export default function AddProjectPage() {
 
       if (response.ok) {
         setMessage("Projet ajouté avec succès!");
+        setProjectName('');
+        setProjectDescription('');
+        setProjectImage(null);
+        e.target.reset();
+
         setTimeout(() => {
           setMessage("");
-          navigate("/work"); 
+          
+          ;
         }, 2000);
       } else {
         setMessage("Erreur lors de l'ajout du projet.");
@@ -40,6 +46,11 @@ export default function AddProjectPage() {
 
   const handleImageChange = (e) => {
     setProjectImage(e.target.files[0]);
+  };
+
+  
+  const goToAdminPage = () => {
+    navigate("/admin"); 
   };
 
   return (
@@ -71,13 +82,17 @@ export default function AddProjectPage() {
         >
           Ajouter le Projet
         </button>
+        
       </form>
-
-      {message && (
-        <div className="mt-4 p-3 bg-green-500 text-white rounded-lg">
-          {message}
-        </div>
-      )}
+      {message && <div className="mt-4 p-3 bg-green-500 text-white rounded-lg">{message}</div>}
+      
+      
+      <button
+        onClick={goToAdminPage}
+        className="mt-4 px-4 py-2 bg-blue-500 rounded-lg text-white font-bold shadow-md hover:bg-blue-400 transition"
+      >
+        Retour 
+      </button>
     </div>
   );
 }
