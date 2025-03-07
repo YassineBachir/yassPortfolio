@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [nom, setNom] = useState("");
@@ -11,16 +12,37 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMessageSent(true);
 
-    
-    setTimeout(() => {
-      setNom("");
-      setPrenom("");
-      setEmail("");
-      setMessage("");
-      setMessageSent(false);
-    }, 1500); 
+    const templateParams = {
+      nom,
+      prenom,
+      email,
+      message,
+    };
+
+    emailjs
+      .send(
+        "service_l6ckv8y", 
+        "template_m98ngh8", 
+        templateParams,
+        "ytuYR575uN40HZ84J" // Remplace par ton User ID (clé publique)
+      )
+      .then(
+        (response) => {
+          console.log("Email envoyé avec succès !", response);
+          setMessageSent(true);
+          setTimeout(() => {
+            setNom("");
+            setPrenom("");
+            setEmail("");
+            setMessage("");
+            setMessageSent(false);
+          }, 1500);
+        },
+        (error) => {
+          console.error("Erreur lors de l'envoi de l'email :", error);
+        }
+      );
   };
 
   return (

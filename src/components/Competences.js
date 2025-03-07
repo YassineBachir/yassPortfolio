@@ -28,9 +28,9 @@ const Competences = () => {
           Compétences
         </motion.h2>
 
-        {/* Icônes des langages */}
         <div className="grid grid-cols-4 md:grid-cols-8 gap-8 text-5xl text-center">
-  {/* Langages de programmation */}
+ 
+
   <FaPython className="text-blue-400 transition-transform duration-300 hover:scale-110" />
   <FaHtml5 className="text-orange-500 transition-transform duration-300 hover:scale-110" />
   <FaCss3Alt className="text-blue-500 transition-transform duration-300 hover:scale-110" />
@@ -42,13 +42,11 @@ const Competences = () => {
   <SiR className="text-blue-500 text-6xl transition-transform duration-300 hover:scale-110" />
   <SiPandas className="text-blue-400 transition-transform duration-300 hover:scale-110" />
 
-  {/* Bases de données (SQL & NoSQL) */}
   <SiMysql className="text-blue-500 transition-transform duration-300 hover:scale-110" />
   <SiMongodb className="text-green-500 transition-transform duration-300 hover:scale-110" />
   <SiFirebase className="text-yellow-500 transition-transform duration-300 hover:scale-110" />
   <FaDatabase className="text-gray-400 transition-transform duration-300 hover:scale-110" />
 
-  {/* Outils & Sécurité */}
   <FaGithub className="text-white transition-transform duration-300 hover:scale-110" />
   <FaLinux className="text-gray-500 transition-transform duration-300 hover:scale-110" />
 

@@ -95,7 +95,7 @@ const Work = () => {
             </motion.div>
           ))}
 
-          {/* Affichage des projets dynamiques récupérés depuis l'API */}
+         
           {projects.map((project) => (
             <motion.div
               key={project.id}

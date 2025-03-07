@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaTools, FaBriefcase } from "react-icons/fa"; // Icônes pour mobile
 
 const Header = () => {
   return (
@@ -8,16 +9,18 @@ const Header = () => {
         <Link to="/" className="text-xl font-bold text-white">
           Yassine<span className="text-purple-400">NDIAYE</span>
         </Link>
-        <div className="flex gap-4">
-        <Link to="/skills" className="btn btn-ghost">
-  Compétences
-</Link>
+        <div className="flex gap-2">
+          {/* Bouton Compétences avec gestion responsive */}
+          <Link to="/skills" className="btn btn-ghost text-sm px-2 py-1 md:text-base md:px-4 md:py-2">
+            <FaTools className="block md:hidden" /> {/* Icône visible sur mobile */}
+            <span className="hidden md:block">Compétences</span>
+          </Link>
 
-
-<a href="/#work" className="btn btn-ghost">
-  Work
-  </a>
-{/* </Link> */}
+          {/* Bouton Work avec gestion responsive */}
+          <a href="/#work" className="btn btn-ghost text-sm px-2 py-1 md:text-base md:px-4 md:py-2">
+            <FaBriefcase className="block md:hidden" /> {/* Icône visible sur mobile */}
+            <span className="hidden md:block">Work</span>
+          </a>
         </div>
       </div>
     </nav>

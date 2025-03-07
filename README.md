@@ -1,7 +1,11 @@
+# La page admin de mon site est navigable sur :
+http://localhost:3000/admin
+
 # Paramètres de connexion de la page admin
 username: "yass",
 password: "yass123",
 
+https://yassportfolio.netlify.app/
 
 # Getting Started with Create React App
 

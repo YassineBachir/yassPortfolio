@@ -12,7 +12,7 @@ const Banner = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
        
         <motion.img
-          src="images/Design.png "
+          src="images/yass11.png "
           alt="Profile"
           className="max-w-sm rounded-lg ml-2 shadow-2xl rotate-[-90deg] "
           variants={fadeIn("right", 0.5)} 

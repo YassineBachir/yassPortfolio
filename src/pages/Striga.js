@@ -4,7 +4,7 @@ import { fadeIn } from "../variants";
 
 export default function Striga() {
   useEffect(() => {
-    window.scrollTo(0, 0); // Faire défiler vers le haut de la page après le rendu
+    window.scrollTo(0, 0); 
   }, []);
 
   return (

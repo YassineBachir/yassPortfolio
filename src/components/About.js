@@ -28,7 +28,7 @@ const About = () => {
           className="w-full max-w-[400px] overflow-hidden mx-auto relative"
         >
           <img
-            src="images/image2.png"
+            src="images/yass2.png"
             alt="Profile"
             className="w-200 h-150 mr-11 rounded-full border-4 border-purple-500 shadow-lg"
           />

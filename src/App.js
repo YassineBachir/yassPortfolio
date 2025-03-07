@@ -15,6 +15,9 @@ import Skills from "./pages/Skills";
 import LoginPage from "./components/LoginPage";
 import AddProjectPage from "./pages/AddProjectPage";
 import AddSkillPage from "./pages/AddSkillPage";
+import Experience from "./components/Experience"
+import SnortProject from "./pages/Snort";
+
 
 function PrivateRoute({ children }) {
   return localStorage.getItem("isAuthenticated") === "true" ? children : <Navigate to="/login" />;
@@ -29,9 +32,11 @@ const App = () => {
           <Route index element={<>
               <Banner />
               <About />
+              <Experience/>
               <Competences />
               <Work />
               <Contact />
+
             </>
           } />
          
@@ -39,7 +44,8 @@ const App = () => {
           <Route path="/projet2" element={<ProjetEcommerce />} />
           <Route path="/projet3" element={<CarnetAdresse />} />
           <Route path="/projet4" element={<SenRV />} />
-          <Route path="/projet5" element={<Striga />} />
+        
+          <Route path="/projet5" element={<SnortProject />} />
           <Route path="/skills" element={<Skills />} />
         
         </Route>
