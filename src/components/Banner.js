@@ -43,19 +43,19 @@ const Banner = () => {
           </h1>
 
           <p className="py-6 text-1xl font-semibold uppercase leading-4">
-            Je suis {" "}
+            Je suis élève ingénieure {" "}
             <span className="text-1xl font-bold bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text">
               <TypeAnimation
                 sequence={[
-                  "Data Scientiste",
-                  2000,
-                  "Développeuse Web",
-                  2000,
+                  // "Data Scientiste",
+                  // 2000,
+                  // "Développeuse Web",
+                  // 2000,
 
-                  // " en Système D'Information",
-                  // 2000,
-                  // " et de Données",
-                  // 2000,
+                  " en Système D'Information",
+                  2000,
+                  " et de Données",
+                  2000,
                 ]}
                 wrapper="span"
                 speed={50}
