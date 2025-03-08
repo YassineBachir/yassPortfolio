@@ -14,7 +14,7 @@ const Banner = () => {
         <motion.img
           src="images/yass11.png "
           alt="Profile"
-          className="max-w-sm rounded-lg ml-2 shadow-2xl rotate-[-90deg] "
+          className="max-w-sm rounded-lg ml-4 shadow-2xl rotate-[-90deg] "
           variants={fadeIn("right", 0.5)} 
           initial="hidden"
           whileInView="show"
@@ -43,16 +43,19 @@ const Banner = () => {
           </h1>
 
           <p className="py-6 text-1xl font-semibold uppercase leading-4">
-            Je suis une{" "}
+            Je suis {" "}
             <span className="text-1xl font-bold bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text">
               <TypeAnimation
                 sequence={[
+                  "Data Scientiste",
+                  2000,
                   "Développeuse Web",
                   2000,
-                  "Data Scientist",
-                  2000,
-                  "Ingénieure Réseaux",
-                  2000,
+
+                  // " en Système D'Information",
+                  // 2000,
+                  // " et de Données",
+                  // 2000,
                 ]}
                 wrapper="span"
                 speed={50}
