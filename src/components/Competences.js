@@ -7,7 +7,7 @@ import { fadeIn } from "../variants";
 
 
 import { FaPython, FaHtml5, FaCss3Alt, FaJs, FaReact, FaDocker, FaGithub, FaLinux, FaDatabase } from "react-icons/fa";
-import { SiC, SiTableau, SiPandas, SiR, SiMysql, SiMongodb, SiFirebase, SiWireguard } from "react-icons/si";
+import { SiC, SiTableau, SiPandas, SiR, SiMysql, SiMongodb, SiFirebase, SiWireguard , SiJenkins, SiKubernetes} from "react-icons/si";
 
 
 const Competences = () => {
@@ -51,9 +51,11 @@ const Competences = () => {
   <FaLinux className="text-gray-500 transition-transform duration-300 hover:scale-110" />
 
   <SiWireguard className="text-red-500 transition-transform duration-300 hover:scale-110" />
-  
+  <SiJenkins className="text-red-500 transition-transform duration-300 hover:scale-110" />
+  <SiKubernetes className="text-red-500 transition-transform duration-300 hover:scale-110" />
 </div>
       </div>
+      
     </section>
   );
 };

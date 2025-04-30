@@ -66,12 +66,13 @@ const Contact = () => {
             type="text"
             value={nom}
             onChange={(e) => setNom(e.target.value)}
-            placeholder="Votre Nom"
+            placeholder=" Nom"
             className="input input-bordered w-full mb-4"
             required
           />
           <input
             type="text"
+            
             value={prenom}
             onChange={(e) => setPrenom(e.target.value)}
             placeholder="Prénom(s)"

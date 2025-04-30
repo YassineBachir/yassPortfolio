@@ -277,6 +277,68 @@ const Skills = () => {
               className="w-50 h-40 opacity-80 rounded-lg shadow-lg mt-4"
             />
           </motion.div>
+
+          <motion.div
+            variants={fadeIn("right", 0.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="card bg-gray-800 p-6 rounded-lg shadow-lg"
+          >
+            <h3 className="text-xl font-semibold mb-2">Jenkins</h3>
+            
+            <img
+              src="images/jenkins.png"
+              alt="Sécurité"
+              className="w-27 h-40 opacity-80 rounded-lg shadow-lg mt-4"
+            />
+          </motion.div>
+
+          <motion.div
+            variants={fadeIn("right", 0.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="card bg-gray-800 p-6 rounded-lg shadow-lg"
+          >
+            <h3 className="text-xl font-semibold mb-2">Kubernetes</h3>
+          
+            <img
+              src="images/kubernetes.png"
+              alt="Sécurité"
+              className="w-30 h-40 opacity-80 rounded-lg shadow-lg mt-4"
+            />
+          </motion.div>
+          <motion.div
+            variants={fadeIn("right", 0.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="card bg-gray-800 p-6 rounded-lg shadow-lg"
+          >
+            <h3 className="text-xl font-semibold mb-2">Springboot</h3>
+          
+            <img
+              src="images/springboot.png"
+              alt="Sécurité"
+              className="w-50 h-40 opacity-80 rounded-lg shadow-lg mt-4"
+            />
+          </motion.div>
+          <motion.div
+            variants={fadeIn("right", 0.5)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="card bg-gray-800 p-6 rounded-lg shadow-lg"
+          >
+            <h3 className="text-xl font-semibold mb-2">Docker</h3>
+          
+            <img
+              src="images/docker1.png"
+              alt="Sécurité"
+              className="w-30 h-40 opacity-80 rounded-lg shadow-lg mt-4"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

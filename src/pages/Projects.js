@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
-const Work = () => {
+const Projects = () => {
   const [projects, setProjects] = useState([]);
 
 
@@ -46,12 +46,17 @@ const Work = () => {
       link: "/projet6",
     },
     {
-      id: 7,
-      title: "Creation d'une plateforme de gestion des fils d'attente",
-      description: "Ce projet consistait à développer une plateforme permettant de gérer les files d’attente de plusieurs services en générant automatiquement des tickets.",
-      link: "/projet7",
+      id: 6,
+      title: "Analyse des données sur l’agriculture au Sénégal",
+      description: "Analyser les données de l'agriculture.",
+      link: "/projet6",
     },
-    
+    {
+      id: 6,
+      title: "Analyse des données sur l’agriculture au Sénégal",
+      description: "Analyser les données de l'agriculture.",
+      link: "/projet6",
+    },
   ];
 
 
@@ -125,4 +130,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;
