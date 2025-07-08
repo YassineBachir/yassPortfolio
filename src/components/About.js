@@ -88,7 +88,7 @@ Que ce soit à travers des projets ambitieux, des lignes de code bien ficelées 
               Me Contacter
             </a>
             <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white font-bold rounded-lg shadow-md opacity-70 hover:opacity-100 hover:scale-105 transition-transform">
-              <a href="/CV-Yassine.pdf" target="_blank">Mon CV</a>
+              <a href="/CV_Yassine_MB_Ndiaye1.pdf" target="_blank">Mon CV</a>
             </button>
           </div>
         </motion.div>
